@@ -6,7 +6,6 @@
 
 
 @import UserNotifications;
-@import FirebaseFirestore;
 
 // Implement UNUserNotificationCenterDelegate to receive display notification via APNS for devices running iOS 10 and above.
 // Implement FIRMessagingDelegate to receive data message via FCM for devices running iOS 10 and above.
@@ -25,8 +24,6 @@ static AppDelegate* instance;
 }
 
 static NSDictionary* mutableUserInfo;
-static FIRAuthStateDidChangeListenerHandle authStateChangeListener;
-static bool authStateChangeListenerInitialized = false;
 
 - (void)setDelegate:(id)delegate {
     objc_setAssociatedObject(self, kDelegateKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
